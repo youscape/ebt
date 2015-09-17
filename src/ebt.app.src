@@ -1,0 +1,15 @@
+{application, 'ebt',
+    [{description, "Erlang behavior tree library"},
+        {vsn, "1.0.0"},
+        {registered, []},
+        {applications,
+            [kernel,
+                stdlib
+            ]},
+        {env, []},
+        {modules, []},
+
+        {contributors, []},
+        {licenses, []},
+        {links, []}
+    ]}.
