@@ -21,14 +21,21 @@
 %% transform
 %%====================================================================
 -ifndef(BT_TEST).
+-define(EBT_TEST, false).
+
 parse_transform(Forms0, _Options) ->
     transform(Forms0).
 -else.
 parse_transform([{attribute, 1, file, _FilePath}, {attribute, _L, module, ModuleName} | _Tail] = Forms0, _Options) ->
     Forms2 = transform(Forms0),
-    Dir = case ?BT_TEST of true -> "transform"; Dir0 -> Dir0 end,
-    file:write_file(io_lib:format("~s/~w.txt", [Dir, ModuleName]), io_lib:format("~p", [Forms2])),
-    Forms2.
+    case ?EBT_TEST of
+        false ->
+            Forms2;
+        true ->
+            file:write_file(io_lib:format("transforms/~w.txt", [ModuleName]), io_lib:format("~p", [Forms2]));
+        Dir ->
+            file:write_file(io_lib:format("~s/~w.txt", [Dir, ModuleName]), io_lib:format("~p", [Forms2]))
+    end.
 -endif.
 
 transform(Forms) ->
