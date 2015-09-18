@@ -1,6 +1,8 @@
 ebt
 =====
 
+[![Build Status](https://travis-ci.org/youscape/ebt.svg?branch=develop)](https://travis-ci.org/youscape/ebt)
+
 Erlang Behaviour Tree Framework.
 
 基于进程字典来是实现类变量, parse_transform实现类方法的继承.
