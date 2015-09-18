@@ -5,6 +5,8 @@ Erlang Behaviour Tree Framework.
 
 基于进程字典来是实现类变量, parse_transform实现类方法的继承.
 
+基于 **ys_bt**[https://git.oschina.net/youscape/ys_bt.git] 修改，原项目不再更新维护。
+
 ```erlang
 %% 优先级选择节点，从左到右遍历子节点，若子节点的准入条件符合信息则执行该子节点
 -define(EBT_SELECTOR, ebt_priority_selector).
