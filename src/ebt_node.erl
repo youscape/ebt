@@ -38,22 +38,7 @@
 %%====================================================================
 %% @doc 节点初始化
 -spec init(Node :: ebt_node()) -> Node :: ebt_node().
-init(#ebt_node{id = Id, static_fields = StaticFields} = Node) ->
-    Data = ?EBT_NODE_DATA(Id),
-
-    DataNew =
-        lists:foldl(
-            fun
-                ({FieldName, FieldValue}, DataAcc) when is_atom(FieldName) ->
-                    % use ':=' ensure no conflict fields
-                    DataAcc#{FieldName := FieldValue};
-                (_Fields, DataAcc) ->
-                    % todo: ensure FieldName is atom?
-                    DataAcc
-            end, Data, StaticFields),
-
-    ?EBT_NODE_DATA(Id, DataNew),
-
+init(#ebt_node{} = Node) ->
     Node.
 
 %% @doc 是否准入判断

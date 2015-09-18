@@ -22,8 +22,6 @@
 
     mod :: atom(),                                  % 节点业务逻辑模块
 
-    static_fields = [] :: list({atom(), term()}),   % 节点静态信息
-
     precondition :: undefined | {module(), atom()} | atom() | fun((ebt_node()) -> boolean()),  % 节点准入条件,
 
     childs = [] :: list(ebt_node())                 % 节点的孩子节点
@@ -45,8 +43,8 @@
 -define(EBT_CLEAR_NODE_DATA(UidRef), erase(UidRef)).        % 清除节点数据
 
 -define(EBT_NODE_MOD(Node, Mod), Node#ebt_node{mod = Mod}).
--define(EBT_SEL(Node), ?EBT_NODE_MOD(Node, bt_selector)).
--define(EBT_SEQ(Node), ?EBT_NODE_MOD(Node, bt_sequence)).
--define(EBT_PAR(Node), ?EBT_NODE_MOD(Node, bt_parallel)).
+-define(EBT_SEL(Node), ?EBT_NODE_MOD(Node, ebt_priority_selector)).
+-define(EBT_SEQ(Node), ?EBT_NODE_MOD(Node, ebt_sequence)).
+-define(EBT_PAR(Node), ?EBT_NODE_MOD(Node, ebt_parallel)).
 
 -endif. %% EBT_HRL

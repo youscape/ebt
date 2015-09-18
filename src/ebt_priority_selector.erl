@@ -1,11 +1,11 @@
 %%%-------------------------------------------------------------------
 %%% @author zyuyou yuyouchow@gmail.com
 %%% @copyright (C) 2015, Y.S.
-%%% @doc　选择节点
+%%% @doc　优先级选择节点
 %%%
 %%% @end
 %%%-------------------------------------------------------------------
--module(ebt_selector).
+-module(ebt_priority_selector).
 
 -ebt_extend(ebt_node).
 
