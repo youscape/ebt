@@ -1,0 +1,5 @@
+language: erlang
+script: make all dialyzer
+otp_release:
+  - 18
+  - 17.5
