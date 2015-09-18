@@ -1,7 +1,7 @@
 ebt
 =====
 
-[![Build Status](https://travis-ci.org/youscape/ebt.svg?branch=develop)](https://travis-ci.org/youscape/ebt)
+[![Build Status](https://travis-ci.org/youscape/ebt.svg?branch=master)](https://travis-ci.org/youscape/ebt)
 
 Erlang Behaviour Tree Framework.
 
